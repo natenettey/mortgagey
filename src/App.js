@@ -1,5 +1,6 @@
 import Navbar from './UI/Navbar';
 import Header from './UI/Header'
+import BodyText from './UI/BodyText';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Header/>
+      <BodyText/>
     </div>
   );
 }
