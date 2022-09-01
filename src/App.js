@@ -1,6 +1,7 @@
 import Navbar from './UI/Navbar';
 import Header from './UI/Header'
 import BodyText from './UI/BodyText';
+import MortgageForm from './Form/MortgageForm';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Navbar/>
       <Header/>
       <BodyText/>
+      <MortgageForm/>
     </div>
   );
 }
