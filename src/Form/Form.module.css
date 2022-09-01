@@ -1,0 +1,48 @@
+.formcontainer{
+    background-color: #032540;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.form_dispplay{
+    display: flex;
+}
+form input, select{
+    display: block;
+    width: 100%;
+    margin:20px 0 40px 0;
+    padding: 15px;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+
+   
+}
+
+form label{
+ color: white;
+ font-family: 'Nunito', sans-serif;
+ font-size: 20px;
+ 
+}
+
+.formcontainer_one{
+    flex: 0 0 50%;
+    margin: 10px;
+    
+}
+.formcontainer_two{
+    flex: 1;
+    margin: 10px;
+}
+.submit_button{
+    background-color: #ee9f67;
+    border: 4px solid #ee9f67;
+    width: 20%;
+    color: rgb(0, 0, 0);
+    
+}
+.submit_button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
