@@ -14,8 +14,10 @@ const MortgageForm = ()=>{
     const [loans, setLoans]=useState()
 
     //form submit handler
-    const submitHandler=()=>{
-
+    const submitHandler=(event)=>{
+        event.preventDefault()
+        const receivedInputs = {status:journeyStatus, saved:savings, 
+            properties:property,type:propertyType,earnings:salary, deductions:commitments,homeLoans:loans}
     }
 
     //set up Individual input handlers
@@ -63,20 +65,20 @@ const MortgageForm = ()=>{
                 <div className={styleclass.formcontainer_one}>
 
                 <label htmlFor="journey-status">Where are you in your home ownership journey ?</label>
-                    <select id="journey-status" onChange={journeyChangeHandler}>
+                    <select id="journey-status" onChange={journeyChangeHandler} required="true">
                     <option value="books">Books</option>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
                     </select>
 
                     <label htmlFor="savings">How much have you set aside for home purchase ?</label>
-                    <input id="savings" type="number" placeholder="In $" onChange={savingsHandler}></input>
+                    <input id="savings" type="number" placeholder="In $" onChange={savingsHandler} required="true"></input>
 
                     <label htmlFor="property-number">How many other properties do you own ?</label>
-                    <input id="property-number" type="number" onChange={propertyHandler}></input>
+                    <input id="property-number" type="number" onChange={propertyHandler} required="true"></input>
 
                     <label htmlFor="property-type">What property type are you looking for ?</label>
-                    <select id="property-type" onChange={propertyTypeHandler}>
+                    <select id="property-type" onChange={propertyTypeHandler} required="true">
                     <option value="books">Books</option>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
@@ -85,13 +87,13 @@ const MortgageForm = ()=>{
                 
                 <div className={styleclass.formcontainer_two}>
                     <label htmlFor="salary">How much do you earn ?</label>
-                    <input id="salary" type="number" placeholder="In $" onChange={salaryHandler}></input>
+                    <input id="salary" type="number" placeholder="In $" onChange={salaryHandler} required="true"></input>
 
                     <label htmlFor="commitments">Total amount of monthly commitments </label>
-                    <input id="commitments" type="number" placeholder="In $" onChange={commitmentsHandler}></input>
+                    <input id="commitments" type="number" placeholder="In $" onChange={commitmentsHandler} required="true"></input>
 
                     <label htmlFor="loan-field">How many existing home loans do you have ?</label>
-                    <input id ="loan-field" type="number" onChange={loansHandler}></input>
+                    <input id ="loan-field" type="number" onChange={loansHandler} required="true"></input>
 
                     
                 </div>
