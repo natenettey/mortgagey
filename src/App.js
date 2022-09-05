@@ -2,6 +2,7 @@ import Navbar from './UI/Navbar';
 import Header from './UI/Header'
 import BodyText from './UI/BodyText';
 import MortgageForm from './Form/MortgageForm';
+import Modal from './ResultModal/Modal';
 import './App.css';
 
 //create class or constructor function here
@@ -68,6 +69,7 @@ const inputsHandler=(inputs)=>{
       <Header/>
       <BodyText/>
       <MortgageForm onSubmitInput = {inputsHandler}/>
+      <Modal/>
     </div>
   );
 }
