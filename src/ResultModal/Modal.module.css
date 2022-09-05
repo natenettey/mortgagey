@@ -1,0 +1,18 @@
+.modal_backdrop{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.692);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+font-family: 'Nunito', sans-serif; 
+
+}
+.modal_backdrop h2{
+    color: white;
+    
+}
