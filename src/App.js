@@ -4,6 +4,7 @@ import BodyText from './UI/BodyText';
 import MortgageForm from './Form/MortgageForm';
 import Modal from './ResultModal/Modal';
 import './App.css';
+import { useState } from 'react';
 
 //create class or constructor function here
 class Mortgage{
@@ -43,11 +44,18 @@ class Mortgage{
     return loan_due
   }
 
+  minimumDownPayment(){
+    
+  }
+
 }
 
 
 
 function App(props) {
+
+  const [showModal, setShowModal] = useState(false)
+  const [valueObject, setValueObject] = useState({})
 
 const inputsHandler=(inputs)=>{
   const {status, saved, properties,type,earnings, deductions,homeLoans} = inputs
@@ -56,20 +64,20 @@ const inputsHandler=(inputs)=>{
   let newLoanToValue = newMortgage.loanToValue()
   let newPropertyCost = newMortgage.propertyCost()
   let newLoanAmount = newMortgage.loanAmount()
-  console.log("newloan",typeof(newLoanToValue),newLoanToValue,newPropertyCost,newLoanAmount)
-  // let newPropertyCost = newMortgage.propertyCost()
-  // let newLoanAmount = newMortgage.loanAmount()
+  console.log("newloan",typeof(newLoanToValue),newLoanToValue,newPropertyCost,newLoanAmount,type)
+  setValueObject( {newLoanToValue,newPropertyCost,newLoanAmount,type,saved})
+  setShowModal(true)
 
-  // console.log(newLoanAmount,newLoanToValue,newPropertyCost)
 
 }
+
   return (
     <div className="App">
       <Navbar/>
       <Header/>
       <BodyText/>
       <MortgageForm onSubmitInput = {inputsHandler}/>
-      <Modal/>
+      {showModal && <Modal breakDownValues = {valueObject}/>}
     </div>
   );
 }
