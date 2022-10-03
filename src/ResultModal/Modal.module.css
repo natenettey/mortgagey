@@ -1,6 +1,7 @@
 .modal_backdrop{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.692);
+    padding: 25px;
     width: 100%;
     height: 100%;
     z-index: 10;
@@ -13,6 +14,42 @@ font-family: 'Nunito', sans-serif;
 
 }
 .modal_backdrop h2{
-    color: white;
-    
+    color: #032540;
+    font-size:27px;
+    margin-bottom: 10px;
+}
+.modal_backdrop p{
+  font-size: 25px;
+}
+.modal_breakdown{
+  margin: 20px 0px 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+.modal_breakdown section:first-child{
+  margin-right: 10px;
+ 
+}
+.modal_breakdown p{
+  font-size: 20px;
+}
+.modal_breakdown__section__div{
+  display: flex;
+
+}
+.modal_breakdown__section__div p:first-child{
+  margin-right: 40px;
+  font-weight: bold;
+  color: #032540;
+}
+
+@media only screen and (max-width:754px){
+  .modal_breakdown{
+    flex-direction: column;
+  
+  }
+  .modal_breakdown__section{
+    margin-bottom: 15px;
+  }
 }
