@@ -45,7 +45,15 @@ class Mortgage{
   }
 
   minimumDownPayment(){
+    const propertyValue = this.propertyCost()
+    const downPayment = propertyValue * (25/100)
+    return downPayment
+  }
+
+  remainingDownPayment(){
     
+    const downPayment = this.minimumDownPayment()
+    return this.saved - downPayment
   }
 
 }
@@ -64,8 +72,10 @@ const inputsHandler=(inputs)=>{
   let newLoanToValue = newMortgage.loanToValue()
   let newPropertyCost = newMortgage.propertyCost()
   let newLoanAmount = newMortgage.loanAmount()
-  console.log("newloan",typeof(newLoanToValue),newLoanToValue,newPropertyCost,newLoanAmount,type)
-  setValueObject( {newLoanToValue,newPropertyCost,newLoanAmount,type,saved})
+  let newDownPayment = newMortgage.minimumDownPayment()
+  let newRemainderDownpayment = newMortgage.remainingDownPayment()
+  console.log("newloan",typeof(newLoanToValue),newLoanToValue,newPropertyCost,newLoanAmount,type,newDownPayment)
+  setValueObject( {newLoanToValue,newPropertyCost,newLoanAmount,type,saved,newDownPayment,newRemainderDownpayment})
   setShowModal(true)
 
 
